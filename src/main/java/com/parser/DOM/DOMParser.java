@@ -14,9 +14,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-//parser can handle different xml files with:
-//1.simple/complex type
-//2.attributes
 public class DOMParser {
     Document document;
     AbstractDOMStAXHandler<?> mapper;
