@@ -19,10 +19,10 @@ import java.util.Map;
 //2.attributes
 public class DOMParser {
     Document document;
-    AbstractDOMHandler<?> mapper;
+    AbstractDOMStAXHandler<?> mapper;
 
     //mapper should be defined for the root.child of the document.
-    public void parse(String xml, AbstractDOMHandler<?> mapper) throws ParserConfigurationException, IOException, SAXException {
+    public void parse(String xml, AbstractDOMStAXHandler<?> mapper) throws ParserConfigurationException, IOException, SAXException {
         this.mapper = mapper;
         buildDocumentByPath(xml);
         parse(document.getDocumentElement());

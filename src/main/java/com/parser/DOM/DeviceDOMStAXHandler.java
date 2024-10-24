@@ -3,13 +3,11 @@ package com.parser.DOM;
 import com.structure.Details;
 import com.structure.Device;
 import com.structure.PortInfo;
-import org.w3c.dom.NamedNodeMap;
-import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-public class DeviceDOMHandler extends AbstractDOMHandler<Device> {
+public class DeviceDOMStAXHandler extends AbstractDOMStAXHandler<Device> {
     @Override
     public void mapValue(String tagName, String nodeValue) {
         switch (tagName) {

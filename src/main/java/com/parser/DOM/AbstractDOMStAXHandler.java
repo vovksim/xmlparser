@@ -1,13 +1,11 @@
 package com.parser.DOM;
 
-import org.w3c.dom.Node;
-
 import java.util.ArrayList;
 import java.util.Map;
 
 // We are storing List of T type, which is child type for root node
 // in this case root:Devices, then T:Device
-public abstract class AbstractDOMHandler<T> {
+public abstract class AbstractDOMStAXHandler<T> {
     protected ArrayList<T> result;
 
     public ArrayList<T> getResult() {
