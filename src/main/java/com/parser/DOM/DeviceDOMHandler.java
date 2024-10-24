@@ -1,4 +1,4 @@
-package com.parser;
+package com.parser.DOM;
 
 import com.structure.Details;
 import com.structure.Device;

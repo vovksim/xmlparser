@@ -1,4 +1,4 @@
-package com.parser;
+package com.parser.DOM;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -11,11 +11,14 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-
+//parser can handle different xml files with:
+//1.simple/complex type
+//2.attributes
 public class DOMParser {
     Document document;
     AbstractDOMHandler<?> mapper;
 
+    //mapper should be defined for the root.child of the document.
     public void parse(String xml, AbstractDOMHandler<?> mapper) throws ParserConfigurationException, IOException, SAXException {
         this.mapper = mapper;
         buildDocumentByPath(xml);

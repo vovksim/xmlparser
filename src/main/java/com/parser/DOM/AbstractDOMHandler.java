@@ -1,4 +1,4 @@
-package com.parser;
+package com.parser.DOM;
 
 import org.w3c.dom.Node;
 
