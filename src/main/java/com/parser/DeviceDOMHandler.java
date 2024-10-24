@@ -8,7 +8,7 @@ import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 
-public class deviceMapperAbstract extends DOMAbstractClassMapper<Device> {
+public class DeviceDOMHandler extends AbstractDOMHandler<Device> {
     @Override
     public void mapValue(String tagName, String nodeValue) {
         switch (tagName) {
@@ -66,7 +66,6 @@ public class deviceMapperAbstract extends DOMAbstractClassMapper<Device> {
         switch (tagName) {
             case "Device":
                 Integer value = Integer.valueOf(attributes.getNamedItem("id").getNodeValue());
-                System.out.println(value);
                 result.getLast().setId(value);
                 break;
             case "port":
