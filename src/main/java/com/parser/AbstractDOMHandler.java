@@ -4,7 +4,9 @@ import org.w3c.dom.Node;
 
 import java.util.ArrayList;
 
-public abstract class DOMAbstractClassMapper<T> {
+// We are storing List of T type, which is child type for root node
+// in this case root:Devices, then T:Device
+public abstract class AbstractDOMHandler<T> {
     protected ArrayList<T> result;
 
     public ArrayList<T> getResult() {
