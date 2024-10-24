@@ -7,6 +7,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class DeviceDOMHandler extends AbstractDOMHandler<Device> {
     @Override
@@ -60,16 +61,21 @@ public class DeviceDOMHandler extends AbstractDOMHandler<Device> {
     }
 
     @Override
-    public void mapAttributes(Node node) {
-        NamedNodeMap attributes = node.getAttributes();
-        String tagName = node.getNodeName();
+    public void mapAttributes(String tagName, Map<String, String> attributes) {
         switch (tagName) {
             case "Device":
-                Integer value = Integer.valueOf(attributes.getNamedItem("id").getNodeValue());
-                result.getLast().setId(value);
+                for (String key : attributes.keySet()) {
+                    if (key.equals("id")) {
+                        result.getLast().setId(Integer.parseInt(attributes.get(key)));
+                    }
+                }
                 break;
             case "port":
-                result.getLast().getDetails().getPorts().getLast().setQuantity(Integer.valueOf(attributes.getNamedItem("quantity").getNodeValue()));
+                for (String key : attributes.keySet()) {
+                    if (key.equals("quantity")) {
+                        result.getLast().getDetails().getPorts().getLast().setQuantity(Integer.parseInt(attributes.get(key)));
+                    }
+                }
         }
     }
 }
