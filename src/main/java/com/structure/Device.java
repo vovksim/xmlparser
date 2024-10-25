@@ -8,6 +8,14 @@ public class Device {
     Boolean isCritical;
     Details details;
 
+    public Device(Integer id, String name, String origin, Integer price, Boolean isCritical, Details details) {
+        this.id = id;
+        this.name = name;
+        this.origin = origin;
+        this.price = price;
+        this.isCritical = isCritical;
+        this.details = details;
+    }
 
     public Integer getId() {
         return id;
