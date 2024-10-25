@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class XMLValidator {
-    public static void validate(String xsd, String xml) throws SAXException, IOException {
+    public static boolean validate(String xsd, String xml) throws SAXException, IOException {
         Validator validator = getSchema(xsd).newValidator();
         XMLErrorHandler errorHandler = new XMLErrorHandler();
         validator.setErrorHandler(errorHandler);
@@ -24,6 +24,7 @@ public class XMLValidator {
         if (!errorHandler.isValid()) {
             throw new RuntimeException("Validation error! See logs for details.");
         }
+        return true;
     }
 
     private static Schema getSchema(String xsd) throws SAXException {
