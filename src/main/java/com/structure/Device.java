@@ -8,6 +8,10 @@ public class Device {
     Boolean isCritical;
     Details details;
 
+    public Device() {
+        details = new Details();
+    }
+
     public Device(Integer id, String name, String origin, Integer price, Boolean isCritical, Details details) {
         this.id = id;
         this.name = name;

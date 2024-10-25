@@ -13,6 +13,14 @@ public class Details {
         ports = new ArrayList<>();
     }
 
+    public Details(boolean isPeripheral, boolean hasCooler, Integer energyConsumption, String group, ArrayList<PortInfo> ports) {
+        this.isPeripheral = isPeripheral;
+        this.energyConsumption = energyConsumption;
+        this.group = group;
+        this.ports = ports;
+        this.hasCooler = hasCooler;
+    }
+
     public boolean isPeripheral() {
         return isPeripheral;
     }
